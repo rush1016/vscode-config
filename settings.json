@@ -1,0 +1,84 @@
+{
+  "window.menuBarVisibility": "toggle",
+  "editor.fontSize": 16,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.enabled": false,
+  "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+  "editor.fontLigatures": true,
+  "extensions.autoUpdate": false,
+  "workbench.statusBar.visible": true,
+  "terminal.external.linuxExec": "kitty",
+  "terminal.explorerKind": "both",
+  "terminal.sourceControlRepositoriesKind": "both",
+  "telemetry.telemetryLevel": "off",
+  "editor.minimap.enabled": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "One Dark italic",
+        "scope": [
+          "comment",
+          "entity.other.attribute-name",
+          "keyword",
+          "markup.underline.link",
+          "storage.modifier",
+          "storage.type",
+          "string.url",
+          "variable.language.super",
+          "variable.language.this"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "One Dark italic reset",
+        "scope": [
+          "keyword.operator",
+          "keyword.other.type",
+          "storage.modifier.import",
+          "storage.modifier.package",
+          "storage.type.built-in",
+          "storage.type.function.arrow",
+          "storage.type.generic",
+          "storage.type.java",
+          "storage.type.primitive"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-w>": false,
+    "<C-p>": false
+  },
+  "vim.useSystemClipboard": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/env": true,
+    "**/venv": true
+  },
+  //exludes fies & folders for watcher service
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true
+  },
+  "workbench.sideBar.location": "right",
+}

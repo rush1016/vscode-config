@@ -1,0 +1,66 @@
+// Place your key bindings in this file to override the defaults
+[
+    // For NVIM-esque shortcuts
+    { 
+        "key": "shift+k",                
+        "command": "workbench.action.nextEditor",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+    },
+    { 
+        "key": "shift+j",                
+        "command": "workbench.action.previousEditor",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+    },
+    // For File Tree/Explorer
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    { 
+        "key": "r",                    
+        "command": "renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" 
+    },
+    { 
+        "key": "d",                
+        "command": "deleteFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus" 
+    },
+    { 
+        "key": "x",                
+        "command": "filesExplorer.cut",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus", 
+    },
+    { 
+        "key": "c",                
+        "command": "filesExplorer.copy",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus",
+    },
+    { 
+        "key": "p",                
+        "command": "filesExplorer.paste",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus",
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.view.explorer",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.closeSidebar",
+        "when": "vim.active && explorerViewletVisible"
+    },
+    // For suggestions
+    {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "shift+tab",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible"
+    }
+]
