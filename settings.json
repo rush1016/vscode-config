@@ -6,53 +6,53 @@
   "security.workspace.trust.untrustedFiles": "newWindow",
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.enabled": false,
-  "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
-  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Google Sans Mono', 'monospace', monospace",
   "extensions.autoUpdate": false,
   "workbench.statusBar.visible": true,
   "terminal.external.linuxExec": "kitty",
   "terminal.explorerKind": "both",
   "terminal.sourceControlRepositoriesKind": "both",
   "telemetry.telemetryLevel": "off",
+  "emmet.triggerExpansionOnTab": true,
   "editor.minimap.enabled": false,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "name": "One Dark italic",
-        "scope": [
-          "comment",
-          "entity.other.attribute-name",
-          "keyword",
-          "markup.underline.link",
-          "storage.modifier",
-          "storage.type",
-          "string.url",
-          "variable.language.super",
-          "variable.language.this"
-        ],
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "name": "One Dark italic reset",
-        "scope": [
-          "keyword.operator",
-          "keyword.other.type",
-          "storage.modifier.import",
-          "storage.modifier.package",
-          "storage.type.built-in",
-          "storage.type.function.arrow",
-          "storage.type.generic",
-          "storage.type.java",
-          "storage.type.primitive"
-        ],
-        "settings": {
-          "fontStyle": ""
-        }
-      }
-    ]
-  },
+  // "editor.tokenColorCustomizations": {
+  //   "textMateRules": [
+  //     {
+  //       "name": "One Dark italic",
+  //       "scope": [
+  //         "comment",
+  //         "entity.other.attribute-name",
+  //         "keyword",
+  //         "markup.underline.link",
+  //         "storage.modifier",
+  //         "storage.type",
+  //         "string.url",
+  //         "variable.language.super",
+  //         "variable.language.this"
+  //       ],
+  //       "settings": {
+  //         "fontStyle": "italic"
+  //       }
+  //     },
+  //     {
+  //       "name": "One Dark italic reset",
+  //       "scope": [
+  //         "keyword.operator",
+  //         "keyword.other.type",
+  //         "storage.modifier.import",
+  //         "storage.modifier.package",
+  //         "storage.type.built-in",
+  //         "storage.type.function.arrow",
+  //         "storage.type.generic",
+  //         "storage.type.java",
+  //         "storage.type.primitive"
+  //       ],
+  //       "settings": {
+  //         "fontStyle": ""
+  //       }
+  //     }
+  //   ]
+  // },
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "vim.handleKeys": {
     "<C-d>": true,
@@ -81,4 +81,6 @@
     "env-*": true
   },
   "workbench.sideBar.location": "right",
+  "editor.lineNumbers": "relative",
+  "git.openRepositoryInParentFolders": "never",
 }

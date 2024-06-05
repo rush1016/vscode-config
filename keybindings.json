@@ -1,31 +1,57 @@
 // Place your key bindings in this file to override the defaults
 [
     // For NVIM-esque shortcuts
+    // Navigation
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.focusRightGroup",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+    },
+    {
+        "key": "ctrl+x",
+        "command": "workbench.action.closeGroup",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" ,
+    },
     { 
         "key": "shift+k",                
-        "command": "workbench.action.nextEditor",
+        "command": "workbench.action.nextEditorInGroup",
         "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
     },
     { 
         "key": "shift+j",                
-        "command": "workbench.action.previousEditor",
+        "command": "workbench.action.previousEditorInGroup",
         "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
     },
     // For File Tree/Explorer
     {
         "key": "a",
         "command": "explorer.newFile",
-        "when": "explorerViewletVisible && filesExplorerFocus"
+        "when": "filesExplorerFocus && foldersViewVisible &&  !explorerResourceReadonly && !inputFocus" 
     },
     { 
         "key": "r",                    
         "command": "renameFile",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus" 
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus && vim.active && vim.mode == 'Normal'" 
     },
     { 
         "key": "d",                
         "command": "deleteFile",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus" 
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus",
     },
     { 
         "key": "x",                
@@ -50,8 +76,9 @@
     {
         "key": "ctrl+n",
         "command": "workbench.action.closeSidebar",
-        "when": "vim.active && explorerViewletVisible"
+        "when": "!editorTextFocus"
     },
+    // Tab for moving up and down lists of options
     // For suggestions
     {
         "key": "tab",
@@ -62,5 +89,35 @@
         "key": "shift+tab",
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetVisible"
-    }
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "search.action.focusNextSearchResult",
+        "when": "searchViewletVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "searchViewletVisible"
+    },
 ]
