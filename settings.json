@@ -1,86 +1,123 @@
 {
-  "window.menuBarVisibility": "toggle",
-  "editor.fontSize": 16,
-  "editor.scrollbar.vertical": "hidden",
-  "editor.scrollbar.verticalScrollbarSize": 0,
-  "security.workspace.trust.untrustedFiles": "newWindow",
-  "security.workspace.trust.startupPrompt": "never",
-  "security.workspace.trust.enabled": false,
-  "editor.fontFamily": "'Google Sans Mono', 'monospace', monospace",
-  "extensions.autoUpdate": false,
-  "workbench.statusBar.visible": true,
-  "terminal.external.linuxExec": "kitty",
-  "terminal.explorerKind": "both",
-  "terminal.sourceControlRepositoriesKind": "both",
-  "telemetry.telemetryLevel": "off",
-  "emmet.triggerExpansionOnTab": true,
-  "editor.minimap.enabled": false,
-  // "editor.tokenColorCustomizations": {
-  //   "textMateRules": [
-  //     {
-  //       "name": "One Dark italic",
-  //       "scope": [
-  //         "comment",
-  //         "entity.other.attribute-name",
-  //         "keyword",
-  //         "markup.underline.link",
-  //         "storage.modifier",
-  //         "storage.type",
-  //         "string.url",
-  //         "variable.language.super",
-  //         "variable.language.this"
-  //       ],
-  //       "settings": {
-  //         "fontStyle": "italic"
-  //       }
-  //     },
-  //     {
-  //       "name": "One Dark italic reset",
-  //       "scope": [
-  //         "keyword.operator",
-  //         "keyword.other.type",
-  //         "storage.modifier.import",
-  //         "storage.modifier.package",
-  //         "storage.type.built-in",
-  //         "storage.type.function.arrow",
-  //         "storage.type.generic",
-  //         "storage.type.java",
-  //         "storage.type.primitive"
-  //       ],
-  //       "settings": {
-  //         "fontStyle": ""
-  //       }
-  //     }
-  //   ]
-  // },
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-s>": false,
-    "<C-z>": false,
-    "<C-w>": false,
-    "<C-p>": false
-  },
-  "vim.useSystemClipboard": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/env": true,
-    "**/venv": true
-  },
-  //exludes fies & folders for watcher service
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/node_modules/**": true,
-    "**/env/**": true,
-    "**/venv/**": true,
-    "env-*": true
-  },
-  "workbench.sideBar.location": "right",
-  "editor.lineNumbers": "relative",
-  "git.openRepositoryInParentFolders": "never",
+    "editor.fontFamily": "JetBrains Mono, monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.8,
+    "editor.suggestFontSize": 14,
+    "editor.suggestLineHeight": 28,
+    "editor.cursorSurroundingLines": 4,
+    "editor.padding.top": 20,
+    "editor.cursorBlinking": "phase",
+    "terminal.integrated.fontFamily": "Jetbrains Mono, monospace",
+    "terminal.integrated.fontSize": 15,
+
+    // File Tree
+    "workbench.tree.indent": 12,
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "material-icon-theme",
+
+    // Hidden items
+    "editor.bracketPairColorization.enabled": false,
+    "editor.guides.indentation": false,
+    "editor.stickyScroll.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "all",
+    "editor.matchBrackets": "never",
+    "editor.occurrencesHighlight": "off",
+    "editor.largeFileOptimizations": false,
+    "editor.renderWhitespace": "none",
+    "breadcrumbs.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.startupEditor": "none",
+    "workbench.activityBar.location": "hidden",
+    "window.commandCenter": false,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "workbench.layoutControl.enabled": false,
+    
+    // Vue
+    "[vue]": { "editor.defaultFormatter": "Vue.volar" },
+    "files.associations": { "*.vue": "vue" },
+
+    // VIM Keybindings
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": [ "<leader>", "v" ], "commands": ["editor.action.revealDefinitionAside"],
+            "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        },
+        { "before": [ "<leader>", "e" ], "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"], "silent": true },
+        { "before": [ "<leader>", "b" ], "commands": ["git.checkout"], "silent": true },
+        { "before": [ "<leader>", "r" ], "commands": ["workbench.action.openRecent"], "silent": true },
+        { "before": [ "<leader>", "f" ], "commands": ["workbench.action.quickTextSearch"], "silent": true },
+        { "before": [ "<leader>", "c" ], "commands": ["workbench.action.toggleCenteredLayout"], "silent": true },
+        { "before": [ "<leader>", "z" ], "commands": [ "settings.cycle.zenMode" ], "silent": true  },
+        { "before": [ "<leader>", "l" ], "commands": [ "settings.cycle.lineNumbers" ], "silent": true  },
+        { "before": [ "<leader>", "o" ], "commands": [ "workbench.action.gotoSymbol" ], "silent": true },
+        { "before": [ "<leader>", "t" ], "commands": [ "workbench.action.showAllSymbols" ], "silent": true },
+        { "before": [ "<leader>", "s" ], "commands": [ "workbench.action.toggleStatusbarVisibility" ], "silent": true },
+        // Git 
+        { "before": [ "<leader>", "g", "d" ], "commands": [ "git.openChange" ], "silent": true },
+        { "before": [ "d", "o" ], "commands": [ "editor.action.dirtydiff.next" ], "silent": true },
+        { "before": [ "d", "c" ], "commands": [ "closeDirtyDiff" ], "when": "dirtyDiffVisible", "silent": true },
+        { "before": [ "d", "p" ], "commands": [ "git.revertSelectedRanges" ], "silent": true },
+        { "before": [ "d", "a" ], "commands": [ "git.stageSelectedRanges" ], "silent": true },
+        { "before": [ "d", "u" ], "commands": [ "git.unstageAll" ], "silent": true }
+    ],
+    // VIM Performance
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    
+    "window.title": "${separator}${activeRepositoryName} [${activeRepositoryBranchName}] ${activeEditorShort}",
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.colorTheme": "PhpStorm Dark Theme",
+
+    // Git Blame Extension
+    "gitblame.statusBarMessageClickAction": "Open git show",
+    "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
+    "gitblame.inlineMessageEnabled": true,
+    "gitblame.inlineMessageFormat": "${author.name} (${time.ago}) ${commit.summary}",
+    "gitblame.delayBlame": 500,
+
+    // Toggle modes
+    "settings.cycle": [
+        {
+            "id": "zenMode",
+            "overrideWorkspaceSettings": false,
+            "values": [
+                {
+                    "editor.lineNumbers": "off",
+                    "workbench.editor.showTabs": "none",
+                    "workbench.statusBar.visible": false
+                },
+                {
+                    "editor.lineNumbers": "on",
+                    "workbench.editor.showTabs": "multiple",
+                    "workbench.statusBar.visible": true
+                }
+            ]
+        },
+        {
+            "id": "lineNumbers",
+            "overrideWorkspaceSettings": false,
+            "values": [
+                {
+                    "editor.lineNumbers": "off"
+                },
+                {
+                    "editor.lineNumbers": "on"
+                },
+                {
+                    "editor.lineNumbers": "relative"
+                }
+            ]
+        }
+    ],
+
+    // Toggled Values
+    "editor.lineNumbers": "off",
+    "workbench.editor.showTabs": "none",
+    "workbench.statusBar.visible": false
 }

@@ -5,91 +5,137 @@
     {
         "key": "ctrl+shift+h",
         "command": "workbench.action.focusLeftGroup",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+        "when": "!activeEditorGroupEmpty" 
     },
     {
         "key": "ctrl+shift+j",
-        "command": "workbench.action.focusNextGroup",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+        "command": "workbench.action.focusBelowGroup",
+        "when": "!activeEditorGroupEmpty" 
     },
     {
         "key": "ctrl+shift+k",
-        "command": "workbench.action.focusPreviousGroup",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+        "command": "workbench.action.focusAboveGroup",
+        "when": "!activeEditorGroupEmpty" 
     },
     {
         "key": "ctrl+shift+l",
         "command": "workbench.action.focusRightGroup",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+        "when": "!activeEditorGroupEmpty" 
     },
     {
         "key": "ctrl+x",
         "command": "workbench.action.closeGroup",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" ,
+        "when": "multipleEditorGroups" ,
     },
     { 
         "key": "shift+k",                
         "command": "workbench.action.nextEditorInGroup",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
+        "when": "!sideBarFocus && !activeEditorGroupEmpty && !inQuickOpen && vim.mode == 'Normal' && !terminalFocus" 
     },
     { 
         "key": "shift+j",                
         "command": "workbench.action.previousEditorInGroup",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'" 
-    },
-    // For File Tree/Explorer
+        "when": "!sideBarFocus && !activeEditorGroupEmpty && !inQuickOpen && vim.mode == 'Normal' && !terminalFocus"},
     {
-        "key": "a",
+        "key": "ctrl+alt+j",
+        "command": "workbench.action.moveEditorToBelowGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "workbench.action.moveEditorToAboveGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "workbench.action.moveEditorToLeftGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "workbench.action.moveEditorToRightGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly && vim.active"
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly && vim.active"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "workbench.action.moveEditorLeftInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "workbench.action.moveEditorRightInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    { 
+        "key": "cmd+e",                
+        "command": "workbench.action.showAllEditorsByMostRecentlyUsed" 
+    },
+    { 
+        "key": "cmd+r",                
+        "command": "workbench.action.openRecent" 
+    },
+    {
+        "key": "cmd+shift+g",
+        "command": "git.checkout",
+    },
+    { 
+        "key": "shift+alt+j",        
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly" 
+    },
+    { 
+        "key": "shift+alt+k",        
+        "command": "editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly" 
+    },
+
+    // File Explorer / Side bar
+    {
+        "key": "ctrl+f",
         "command": "explorer.newFile",
-        "when": "filesExplorerFocus && foldersViewVisible &&  !explorerResourceReadonly && !inputFocus" 
+        "when": "explorerViewletFocus"
     },
-    { 
-        "key": "r",                    
-        "command": "renameFile",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus && vim.active && vim.mode == 'Normal'" 
-    },
-    { 
-        "key": "d",                
-        "command": "deleteFile",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus",
-    },
-    { 
-        "key": "x",                
-        "command": "filesExplorer.cut",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus", 
-    },
-    { 
-        "key": "c",                
-        "command": "filesExplorer.copy",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus",
-    },
-    { 
-        "key": "p",                
-        "command": "filesExplorer.paste",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus",
+    {
+        "key": "ctrl+d",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
     },
     {
         "key": "ctrl+n",
         "command": "workbench.view.explorer",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal"
+        "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
     },
     {
         "key": "ctrl+n",
         "command": "workbench.action.closeSidebar",
-        "when": "!editorTextFocus"
+        "when": "viewContainer.workbench.view.explorer.enabled && explorerViewletFocus"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "renameFile",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
     },
     // Tab for moving up and down lists of options
-    // For suggestions
-    {
-        "key": "tab",
-        "command": "selectNextSuggestion",
-        "when": "suggestWidgetVisible"
-    },
-    {
-        "key": "shift+tab",
-        "command": "selectPrevSuggestion",
-        "when": "suggestWidgetVisible"
-    },
     {
         "key": "ctrl+j",
         "command": "selectNextSuggestion",
@@ -112,12 +158,51 @@
     },
     {
         "key": "ctrl+j",
-        "command": "search.action.focusNextSearchResult",
-        "when": "searchViewletVisible"
+        "command": "search.action.focusSearchList",
+        "when": "searchViewletVisible && hasSearchResult && searchViewletFocus"
+    },
+
+    // Settings
+    {
+        "key": "cmd+,",
+        "command": "workbench.action.openSettingsJson",
     },
     {
-        "key": "ctrl+k",
-        "command": "search.action.focusPreviousSearchResult",
-        "when": "searchViewletVisible"
+        "key": "cmd+.",
+        "command": "workbench.action.openGlobalKeybindingsFile",
     },
+
+    // Terminal
+    {
+        "key": "cmd+shift+j",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+shift+k",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+
+    // Git
+    {
+        "key": "s a",
+        "command": "git.stageAll",
+        "when": "inDiffEditor && editorFocus"
+    },
+    {
+        "key": "s s",
+        "command": "git.stageSelectedRanges",
+        "when": "inDiffEditor && editorFocus"
+    },
+    {
+        "key": "u",
+        "command": "git.unstageAll",
+        "when": "inDiffEditor && editorFocus"
+    },
+    {
+        "key": "r",
+        "command": "git.revertSelectedRanges",
+        "when": "inDiffEditor && editorFocus"
+    }
 ]
